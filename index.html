@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What Should I Cook Today?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <nav class="nav">
+    <span class="brand">Cook Today</span>
+    <button class="ghost" id="theme" aria-label="Toggle dark mode"></button>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">Smart kitchen assistant</p>
+    <h1>What should I cook today?</h1>
+    <p class="lede">Select the ingredients you already have, choose your time and mood, and get dishes ranked by how closely they match your kitchen.</p>
+    <div class="stats">
+      <div><b id="sI">0</b><span>Ingredients</span></div>
+      <div><b id="sR">0</b><span>Recipes</span></div>
+      <div><b id="sS">0</b><span>Selected</span></div>
+    </div>
+  </header>
+
+  <div class="app">
+    <aside class="side panel" aria-label="Filters">
+      <h2>Your kitchen</h2>
+      <div id="ings"></div>
+      <div class="group"><h3>Time available</h3>
+        <div class="wrapx" id="tc" role="group" aria-label="Cooking time">
+          <button class="opt" data-t="15">Up to 15 min</button>
+          <button class="opt" data-t="30">Up to 30 min</button>
+          <button class="opt" data-t="60">Up to 1 hour</button>
+        </div></div>
+      <div class="group"><h3>Mood</h3>
+        <div class="wrapx" id="mc" role="group" aria-label="Mood">
+          <button class="opt" data-m="Any">Any</button>
+          <button class="opt" data-m="Light">Light</button>
+          <button class="opt" data-m="Comfort Food">Comfort Food</button>
+          <button class="opt" data-m="Feast Style">Feast Style</button>
+          <button class="opt" data-m="Spicy">Spicy</button>
+        </div></div>
+      <button class="ghost" id="clear">Clear selection</button>
+    </aside>
+
+    <main>
+      <div class="head">
+        <h2>Suggested dishes</h2>
+        <span id="count" aria-live="polite"></span>
+        <button class="ghost" id="favOnly" aria-pressed="false">Saved only</button>
+        <button class="btn" id="surprise">Surprise me</button>
+      </div>
+      <div class="cards" id="results"></div>
+      <div class="empty" id="empty" hidden></div>
+    </main>
+  </div>
+</div>
+
+<dialog id="modal" aria-label="Recipe steps"></dialog>
+<div class="over" id="over" role="status"><div><div class="plate"></div><p>Choosing a dish for you…</p></div></div>
+<script src="script.js"></script>
+</body>
+</html>
